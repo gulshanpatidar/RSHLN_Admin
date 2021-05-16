@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">RSHLN Admin</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="orders">Orders</string>
+    <string name="products">Products</string>
+    <string name="fab_description">this button is used to add the product</string>
+    <string name="title_add_product_fragment">Add Product Fragment</string>
+    <string name="add_product_label_text">Add New Product</string>
+    <string name="enter_product_name_text">Enter Product Name</string>
+    <string name="enter_product_description_text">Enter Product Description</string>
+    <string name="enter_product_price_text">Enter Price in INR</string>
+    <string name="is_product_available_text">Product Is Available</string>
+    <string name="add_product_button_text">Add Product</string>
+    <string name="update_product">Update Product</string>
+    <string name="title_product_detail_fragment">Product Detail</string>
+</resources>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.productDetail.ProductDetailFragment">
+
+            <ImageView
+                android:id="@+id/product_image_in_detail"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars"/>
+
+            <TextView
+                android:id="@+id/product_name_in_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/product_image_in_detail"
+                app:layout_constraintTop_toBottomOf="@id/product_image_in_detail"
+                tools:text="Mi Power Bank"/>
+
+            <EditText
+                android:id="@+id/product_price_in_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/enter_product_price_text"
+                android:inputType="numberDecimal"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/product_name_in_detail"
+                app:layout_constraintTop_toBottomOf="@id/product_name_in_detail"
+                tools:text="₹534"/>
+
+            <TextView
+                android:id="@+id/product_description_in_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/product_price_in_detail"
+                app:layout_constraintTop_toBottomOf="@id/product_price_in_detail"
+                tools:text="This is a very good power bank with fast charging available and also it has two types of cables provided in the box itself."/>
+
+            <CheckBox
+                android:id="@+id/is_product_available_in_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/is_product_available_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/product_description_in_detail"
+                app:layout_constraintTop_toBottomOf="@id/product_description_in_detail"/>
+
+            <Button
+                android:id="@+id/update_product_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/update_product"
+                app:layout_constraintEnd_toEndOf="@id/product_image_in_detail"
+                app:layout_constraintStart_toStartOf="@id/is_product_available_in_detail"
+                app:layout_constraintTop_toBottomOf="@id/is_product_available_in_detail" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</layout>
