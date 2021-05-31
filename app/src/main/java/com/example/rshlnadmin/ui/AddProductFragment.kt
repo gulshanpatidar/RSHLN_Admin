@@ -31,7 +31,6 @@ import com.google.firebase.storage.UploadTask
 class AddProductFragment : Fragment() {
 
     private var binding: AddProductFragmentBinding? = null
-    private lateinit var viewModel: AddProductViewModel
     //these are the variables which are used to add the images
     private val PICK_IMAGE_REQUEST = 71
     private var filePath: Uri? = null
@@ -48,10 +47,6 @@ class AddProductFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = AddProductFragmentBinding.inflate(inflater)
-
-        viewModel = ViewModelProvider(this).get(AddProductViewModel::class.java)
-
-        binding?.viewModel = viewModel
         (activity as MainActivity).supportActionBar?.title = "Add Product"
 
         //initially hide the image view and show the button

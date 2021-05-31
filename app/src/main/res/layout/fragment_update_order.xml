@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.update_order.UpdateOrderFragment">
+
+        <RadioGroup
+            android:id="@+id/choose_order_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="32dp">
+
+            <RadioButton
+                android:id="@+id/order_approved"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/order_approved"/>
+
+            <RadioButton
+                android:id="@+id/order_rejected"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/order_rejected"
+                android:layout_marginTop="8dp"/>
+
+            <RadioButton
+                android:id="@+id/order_cancelled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/order_cancelled"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"/>
+
+            <RadioButton
+                android:id="@+id/order_packed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/order_packed"
+                android:layout_marginTop="8dp"/>
+
+            <RadioButton
+                android:id="@+id/order_shipped"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/order_shipped"
+                android:layout_marginTop="8dp"/>
+
+            <RadioButton
+                android:id="@+id/order_delivered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/order_delivered"
+                android:layout_marginTop="8dp"/>
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/update_status_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/choose_order_status"
+            android:layout_margin="32dp"
+            android:text="@string/update_order_status"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -16,4 +16,15 @@
     <string name="add_product_button_text">Add Product</string>
     <string name="update_product">Update Product</string>
     <string name="title_product_detail_fragment">Product Detail</string>
+    <string name="title_order_detail_fragment">Order Details</string>
+    <string name="shipping_address">Shipping Address</string>
+    <string name="amount_payable">Payable Amount</string>
+    <string name="title_update_order_fragment">Update Order Details</string>
+    <string name="order_approved">Order Approved</string>
+    <string name="order_rejected">Order Rejected</string>
+    <string name="order_cancelled">Order Cancelled</string>
+    <string name="order_packed">Order Packed</string>
+    <string name="order_shipped">Order Shipped</string>
+    <string name="order_delivered">Order Delivered</string>
+    <string name="update_order_status">Update Order Status</string>
 </resources>

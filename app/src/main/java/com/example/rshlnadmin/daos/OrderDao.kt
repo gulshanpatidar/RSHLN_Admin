@@ -1,6 +1,7 @@
 package com.example.rshlnadmin.daos
 
 import com.example.rshlnadmin.models.Order
+import com.example.rshlnadmin.ui.OrderStatus
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
@@ -18,19 +19,9 @@ class OrderDao {
         return ordersCollection.document(orderId).get()
     }
 
-    fun updateStatus(status: String,orderId: String){
+    fun updateStatus(order: Order){
         GlobalScope.launch {
-            val order = getOrderById(orderId).await().toObject(Order::class.java)!!
-            order.orderStatus = status
-            ordersCollection.document(orderId).set(order)
-        }
-    }
-
-    fun orderDelivered(orderId: String){
-        GlobalScope.launch {
-            val order = getOrderById(orderId).await().toObject(Order::class.java)!!
-            order.isDelivered = true
-            ordersCollection.document(orderId).set(order)
+            ordersCollection.document(order.orderId).set(order)
         }
     }
 }

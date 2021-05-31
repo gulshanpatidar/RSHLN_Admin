@@ -67,22 +67,5 @@ class ProductsViewModel : ViewModel() {
                 _products.value = mProducts
             }
         }
-//        _status.value = ProductStatus.LOADING
-//        productsCollection.addSnapshotListener{snapshot,e ->
-//            e?.let {
-//                _status.value = ProductStatus.ERROR
-//                //this is an exception
-//                return@addSnapshotListener
-//            }
-//            snapshot?.let {
-//                val documents = it.getDocumentChanges()
-//                for (document in documents){
-//                    val product = document.document.toObject(Product::class.java)
-//                    mProducts.add(product)
-//                }
-//                _products.value = mProducts
-//                ProductStatus.DONE
-//            }
-//        }
     }
 }
