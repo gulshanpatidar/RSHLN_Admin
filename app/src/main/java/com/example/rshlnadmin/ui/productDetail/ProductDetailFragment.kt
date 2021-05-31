@@ -1,12 +1,11 @@
 package com.example.rshlnadmin.ui.productDetail
 
+import android.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import coil.load
 import coil.transform.RoundedCornersTransformation
@@ -41,6 +40,7 @@ class ProductDetailFragment(val productId: String) : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
         requireActivity().onBackPressedDispatcher.addCallback(this,object: OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
                 val productsFragment = (activity as MainActivity).activeFragment
@@ -51,6 +51,36 @@ class ProductDetailFragment(val productId: String) : Fragment() {
                 navView.visibility = View.VISIBLE
             }
         })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_product_detail,menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId==R.id.menu_delete_product){
+            deleteProduct()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteProduct() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle(getString(R.string.product_delete_warning))
+        builder.setPositiveButton("YES",{ dialog,which ->
+            productDao.deleteProduct(productId)
+            requireActivity().runOnUiThread{
+                Toast.makeText(requireContext(),"Product deleted successfully",Toast.LENGTH_SHORT).show()
+                exitThisFragment()
+            }
+        })
+
+        builder.setNegativeButton("NO",{ dialog, which ->
+
+        })
+
+        builder.show()
     }
 
     private fun updateProduct() {

@@ -30,7 +30,6 @@ class ProductDao {
 
     fun deleteProduct(productId: String){
         GlobalScope.launch {
-            val product = getProductById(productId).await().toObject(Product::class.java)!!
             productsCollection.document(productId).delete()
         }
     }
